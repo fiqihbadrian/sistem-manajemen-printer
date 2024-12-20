@@ -1,67 +1,104 @@
-# Sistem Manajemen Printer
 
-Sistem ini dirancang untuk mengelola informasi tentang printer yang diservis, termasuk data pelanggan, status printer, dan tanggal servis. Aplikasi ini memungkinkan Anda untuk menambahkan, melihat, dan memperbarui data printer dengan mudah.
+# Sistem Manajemen Printer (Open Source)
+
+Sistem Manajemen Printer adalah aplikasi berbasis web yang memungkinkan Anda untuk menambah, mengedit, dan menghapus data printer. Aplikasi ini juga memiliki fitur untuk mengekspor data ke dalam format Excel.
 
 ## Fitur
-- Menambahkan data printer
-- Melihat data printer yang sudah diservis
-- Mengupdate status printer
-- Ekspor data ke Excel
 
-## Persyaratan Sistem
-- PHP 7.x atau yang lebih baru
-- MySQL Database
-- Web server (misalnya Apache atau Nginx)
+- Menambah data printer
+- Mengedit data printer
+- Menghapus data printer
+- Menampilkan daftar printer yang tersimpan
+- Menyimpan data dalam database MySQL
+- Menyediakan fitur ekspor data ke format Excel
+
+## Prasyarat
+
+Sebelum menjalankan aplikasi ini, pastikan Anda memiliki:
+
+- PHP versi 7.4 atau lebih tinggi
+- MySQL atau MariaDB
+- Server web (misalnya Apache atau Nginx)
+- Akses untuk membuat database dan tabel di MySQL
 
 ## Instalasi
 
-### 1. Clone Repository
-Clone repository ini ke dalam server lokal Anda atau direktori proyek.
+1. **Clone Repository**
 
-```bash
-git clone https://github.com/fiqihbadrian/sistemmanajemenprinter.git
-```
+   Jika Anda menggunakan Git, clone repository ini:
 
-### 2. Buat Database
-Buat database baru di MySQL dengan nama `inventory_db` dan jalankan skrip SQL berikut untuk membuat tabel `printers`:
+   ```bash
+   git clone https://github.com/fiqihbadrian/sistemmanajemenprinter.git
+   cd sistem-manajemen-printer
+   ```
 
-```sql
-CREATE TABLE `printers` (
-  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `name` VARCHAR(255) NOT NULL,
-  `model` VARCHAR(255) NOT NULL,
-  `status` ENUM('Servis', 'Selesai') NOT NULL,
-  `service_date` DATE NOT NULL,
-  `customer` VARCHAR(255) NOT NULL,
-  `customer_number` VARCHAR(50) NOT NULL
-);
-```
+2. **Konfigurasi Database**
 
-### 3. Konfigurasi Koneksi Database
-Edit file `config.php` untuk mengonfigurasi kredensial koneksi ke database MySQL Anda.
+   Pastikan Anda telah membuat database MySQL sesuai dengan konfigurasi di file `config.php`. Berikut adalah langkah-langkah untuk membuat database:
 
-```php
-// Konfigurasi database
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'inventory_db');
-```
+   - Masuk ke MySQL:
 
-### 4. Menjalankan Aplikasi
-Setelah mengonfigurasi database, Anda bisa membuka aplikasi di browser dengan mengarahkan URL ke direktori aplikasi Anda.
+     ```bash
+     mysql -u root -p
+     ```
 
-### 5. Menggunakan Aplikasi
-- **Menambahkan Printer**: Gunakan form yang tersedia untuk menambahkan data printer ke database.
-- **Melihat Data Printer**: Lihat semua printer yang ada di database.
-- **Update Status Printer**: Update status printer yang sedang diservis.
-- **Ekspor Data**: Mengekspor database ke Excel
+   - Buat database dan tabel yang diperlukan:
 
-## Contributing
+     ```sql
+     CREATE DATABASE inventory_db;
+     USE inventory_db;
 
-Jika Anda ingin berkontribusi pada proyek ini, Anda dapat mengikuti langkah-langkah berikut:
-1. Fork repositori ini.
-2. Buat cabang baru (branch) untuk fitur atau perbaikan yang Anda buat.
-3. Lakukan perubahan dan kirimkan pull request.
+     CREATE TABLE printers (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+         name VARCHAR(255) NOT NULL,
+         model VARCHAR(255) NOT NULL,
+         status ENUM('Servis', 'Selesai') NOT NULL,
+         service_date DATE NOT NULL,
+         customer VARCHAR(255) NOT NULL,
+         customer_number VARCHAR(15) NOT NULL
+     );
+     ```
+
+3. **Konfigurasi File `config.php`**
+
+   Pada file `config.php`, masukkan kredensial database Anda dengan aman seperti berikut:
+
+   ```php
+   <?php
+   define('DB_HOST', 'localhost');
+   define('DB_USER', 'root');  // Ganti dengan username database Anda
+   define('DB_PASS', '');      // Ganti dengan password database Anda
+   define('DB_NAME', 'inventory_db');
+   ?>
+   ```
+
+4. **Amankan File Konfigurasi**
+
+   Pastikan file `config.php` memiliki izin akses yang terbatas agar tidak bisa diakses publik. Jalankan perintah berikut untuk mengamankan file konfigurasi:
+
+   ```bash
+   chmod 600 config.php
+   ```
+
+5. **Jalankan Aplikasi**
+
+   Letakkan aplikasi pada direktori root server web Anda, misalnya pada `htdocs` di XAMPP, atau pada folder yang sesuai dengan server web yang Anda gunakan. Akses aplikasi melalui browser:
+
+   ```
+   http://localhost/sistem-manajemen-printer/index.php
+   ```
+
+## Penggunaan
+
+Setelah aplikasi dijalankan, Anda dapat:
+
+- Menambahkan data printer melalui form yang disediakan.
+- Mengedit data printer dengan memilih tombol "Edit" di daftar printer.
+- Menghapus data printer dengan memilih tombol "Hapus" di daftar printer.
+- Mengekspor data printer ke dalam format Excel.
+
+## Pengembangan
+
+Jika Anda ingin berkontribusi atau melakukan perubahan pada proyek ini, silakan lakukan fork dan kirim pull request.
 
 ## Lisensi
