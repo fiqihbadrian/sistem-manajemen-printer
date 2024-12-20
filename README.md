@@ -19,7 +19,7 @@ Sistem ini dirancang untuk mengelola informasi tentang printer yang diservis, te
 Clone repository ini ke dalam server lokal Anda atau direktori proyek.
 
 ```bash
-git clone https://github.com/username/sistemmanajemenprinter.git
+git clone https://github.com/fiqihbadrian/sistemmanajemenprinter.git
 ```
 
 ### 2. Buat Database
