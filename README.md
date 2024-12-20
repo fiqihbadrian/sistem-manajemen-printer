@@ -29,7 +29,7 @@ Sebelum menjalankan aplikasi ini, pastikan Anda memiliki:
    Jika Anda menggunakan Git, clone repository ini:
 
    ```bash
-   git clone https://github.com/fiqihbadrian/sistemmanajemenprinter.git
+   git clone https://github.com/fiqihbadrian/sistem-manajemen-printer.git
    cd sistem-manajemen-printer
    ```
 
@@ -86,7 +86,7 @@ Sebelum menjalankan aplikasi ini, pastikan Anda memiliki:
    Letakkan aplikasi pada direktori root server web Anda, misalnya pada `htdocs` di XAMPP, atau pada folder yang sesuai dengan server web yang Anda gunakan. Akses aplikasi melalui browser:
 
    ```
-   http://localhost/sistemmanajemenprinter/index.php
+   http://localhost/sistem-manajemen-printer/index.php
    ```
 
 ## Penggunaan
