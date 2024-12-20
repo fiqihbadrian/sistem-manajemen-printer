@@ -85,7 +85,7 @@ Sebelum menjalankan aplikasi ini, pastikan Anda memiliki:
    Letakkan aplikasi pada direktori root server web Anda, misalnya pada `htdocs` di XAMPP, atau pada folder yang sesuai dengan server web yang Anda gunakan. Akses aplikasi melalui browser:
 
    ```
-   http://localhost/sistem-manajemen-printer/index.php
+   http://localhost/sistemmanajemenprinter/index.php
    ```
 
 ## Penggunaan
