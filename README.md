@@ -101,4 +101,6 @@ Setelah aplikasi dijalankan, Anda dapat:
 
 Jika Anda ingin berkontribusi atau melakukan perubahan pada proyek ini, silakan lakukan fork dan kirim pull request.
 
+## preview
+
 <img width="960" alt="Screenshot 2024-12-20 160802" src="https://github.com/user-attachments/assets/5f42e914-b101-4600-9efe-a515289dd9f2" />
