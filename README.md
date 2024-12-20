@@ -1,7 +1,8 @@
 
 # Sistem Manajemen Printer (Open Source)
 
-Sistem Manajemen Printer adalah aplikasi berbasis web yang memungkinkan Anda untuk menambah, mengedit, dan menghapus data printer. Aplikasi ini juga memiliki fitur untuk mengekspor data ke dalam format Excel.
+Sistem Manajemen Printer berbasis PHP untuk mengelola data printer yang diservis. Fitur termasuk tambah, edit, hapus, dan tampilan daftar printer, serta ekspor data ke Excel. Menggunakan MySQL untuk penyimpanan dan Tailwind CSS untuk desain responsif.
+
 
 ## Fitur
 
